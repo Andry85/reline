@@ -9,7 +9,7 @@ img, table {border: none;}
 
 
 a {
-	color: #000;
+	color: #2a2828;
 	text-decoration: none;
 	transition: all 0.5s ease;
 	&:hover,
@@ -32,14 +32,15 @@ header,footer,article,section,hgroup,nav,menu,aside,figure,main,video,address,pi
 h1, h2, h3, h4, h5, h6 {
 	margin: 10px 0;
 	font: {
-	    weight: bold;
+		family: 'Yeseva One', cursive;;
+	    weight: normal;
 	}
 }
-h1 {font-size: 36px;}
-h2 {font-size: 27px;}
-h3 {font-size: 24px;}
-h4 {font-size: 20px;}
-h5 {font-size: 16px;}
+h1 {font-size: 60px;}
+h2 {font-size: 50px;}
+h3 {font-size: 18px;}
+h4 {font-size: 16px;}
+h5 {font-size: 14px;}
 h6 {font-size: 12px;}
 
 ul, ol {list-style:none;}
@@ -53,10 +54,16 @@ img{width:auto\9;height:auto;max-width:100%;vertical-align:middle;border:0;-ms-i
 
 body {
 	background: #fff;
+	&.index-page {
+		background: url("../img/body-bg.jpg") center top no-repeat;
+		@include breakpoint(lg-down) {
+			background-image: url("../img/body-bg-1024.jpg");
+		}
+	}
 
 	font: {
-		family: 'Lato', sans-serif;
-		size: 16px;
+		family: 'Intro-Book', sans-serif;
+		size: 14px;
 	}
 	color: $text-color;
 }

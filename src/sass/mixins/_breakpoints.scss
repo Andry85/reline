@@ -1,10 +1,10 @@
 ﻿@mixin breakpoint($point){
 
     @if ($point == lg-up){
-        @media (min-width: 1200px){ @content }
+        @media (min-width: 1025px){ @content }
     }
     @else if ($point == lg-down){
-        @media (max-width: 1199px){ @content }
+        @media (max-width: 1024px){ @content }
     }
     @else if ($point == md-up){
         @media (min-width: 992px){ @content }
