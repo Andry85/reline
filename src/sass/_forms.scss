@@ -1,0 +1,69 @@
+
+::placeholder {color: $input-color;}
+
+
+/* ---------------------
+INPUT FIELDS
+--------------------- */
+.formGroup {
+  margin-bottom: 32px;
+}
+.formLabel {
+  display: block;
+  margin-bottom: 17px;
+}
+.formInput,
+textarea {
+  background: #fff;
+  font: {
+    family: 'Lato', sans-serif;
+    size: 16px;
+  }
+  border: 1px solid $input-border;
+  padding: 5px 21px;
+  color: $input-color;
+  width: 100%;
+  height: 45px;
+  line-height: 35px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+textarea {
+  resize: vertical;
+  height: auto;
+  line-height: inherit;
+}
+
+
+:focus {outline: 0;}
+
+.btn {
+ background: #00ad4e;
+  border-radius: 2px;
+  color: #fff;
+  border: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font: {
+    family: 'Lato', sans-serif;
+    size: 14px;
+    weight: bold;
+  }
+  line-height: 49px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  text-align: center;
+  max-width: 100%;
+  &:hover {
+    background: #0b7a3d;
+    text-decoration: none;
+  }
+  &--cancel {
+    background: #898989;
+    &:hover {
+      background: #726e6e;
+    }
+  }
+}
