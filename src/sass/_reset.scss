@@ -56,7 +56,7 @@ body {
 	background: #fff;
 	&.index-page {
 		background: url("../img/body-bg.jpg") center top no-repeat;
-		@include breakpoint(lg-down) {
+		@include breakpoint(xmd-down) {
 			background-image: url("../img/body-bg-1024.jpg");
 		}
 	}

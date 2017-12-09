@@ -12,6 +12,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
+  @include breakpoint(xmd-down) {
+    max-width: 900px;
+  }
 }
 
 .index-page .header {
@@ -60,8 +63,21 @@
   padding: 8px 0 0 29px;
   display: flex;
   justify-content: space-between;
+  @include breakpoint(lg-down) {
+   padding-left: 9px;
+  }
+  @include breakpoint(xmd-down) {
+    padding-left: 29px;
+  }
   &__item {
-
+    @include breakpoint(xmd-down) {
+      display: none;
+    }
+    &:nth-child(1),&:nth-child(2) {
+      @include breakpoint(xmd-down) {
+        display: block;
+      }
+    }
   }
   &__link {
     font: {
@@ -72,6 +88,16 @@
     display: block;
     padding: 5px 10px;
     letter-spacing: 1.02px;
+    @include breakpoint(lg-down) {
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 10px;
+    }
+    @include breakpoint(xmd-down) {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 11px;
+    }
   }
 }
 
@@ -82,11 +108,13 @@
     font-size: 16px;
     text-transform: uppercase;
     font-weight: normal;
+    color: #2a2828;
   }
   &__city {
     font-size: 13px;
     font-style: normal;
     font-weight: normal;
+    color: #6f6e6e;
   }
   &__link {
     margin: 4px 0 0 0;
@@ -109,13 +137,22 @@
   &__title {
     padding: 61px 0 0 0;
     max-width: 620px;
+    @include breakpoint(xmd-down) {
+      max-width: 370px;
+    }
     h1 {
       margin: 0;
+      @include breakpoint(xmd-down) {
+        font-size: 40px;
+      }
     }
   }
   &__categories {
     max-width: 782px;
     padding: 130px 0 0 0;
+    @include breakpoint(xmd-down) {
+      padding-top: 160px;
+    }
   }
 }
 
@@ -179,13 +216,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include breakpoint(xmd-down) {
+    max-width: 780px;
+    margin: 0 auto;
+  }
 }
 .documentsText {
   width: 40.68%;
+  @include breakpoint(xmd-down) {
+    width: 62.82%;
+  }
   &__title {
     margin: 5px 0 0 0;
     line-height: 1.4;
     max-width: 320px;
+    @include breakpoint(xmd-down) {
+      font-size: 40px;
+      margin-top: 18px;
+    }
   }
   &__subtitle {
     font: {
@@ -210,6 +258,9 @@
 }
 .documentsSliderWrap {
   width: 48.98%;
+  @include breakpoint(xmd-down) {
+    width: 270px;
+  }
 }
 
 .owl-carousel--documents {
@@ -283,6 +334,7 @@
 }
 
 .documentsSlider {
+    padding: 0 45px;
     &__item {
       figure {
         figcaption {
@@ -302,6 +354,9 @@
   flex-wrap: wrap;
   max-width: 600px;
   justify-content: space-between;
+  @include breakpoint(xmd-down) {
+   margin: 0 auto;
+  }
   &__item {
     width: 33.3%;
     text-align: center;
@@ -326,6 +381,9 @@
 .portfolioSlider {
   width: 40.68%;
   margin: 0 40px 0 0;
+  @include breakpoint(xmd-down) {
+    width: 43.3%;
+  }
 }
 
 .thumbs {
@@ -357,6 +415,10 @@
 .portfolioText {
   width: 47.46%;
   padding: 82px 0 0 0;
+  @include breakpoint(xmd-down) {
+    padding-top: 0;
+    width: 51%;
+  }
   &__title {
     margin: 0 0 20px 0;
   }
@@ -415,5 +477,60 @@
         font-family: 'Intro-Bold';
         text-decoration: underline;
       }
+  }
+}
+
+
+
+.button {
+  display: none;
+  cursor: pointer;
+  width: 22px;
+  position: relative;
+  top: 11px;
+  margin-right: 28px;
+  i {
+    display: block;
+    border-top: 1px solid #030303;
+    margin-bottom: 6px;
+  }
+  @include breakpoint(xmd-down) {
+    display: block;
+  }
+}
+.slidebar {
+  background: #fff;
+  z-index: 99999;
+  padding: 9px 0 0 0;
+  .slidebarBottom {
+    padding: 65px 72px 62px 172px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.cloze-slidebar {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 26px 0 72px;
+  position: relative;
+  top: -10px;
+}
+
+.slidebarList {
+  padding: 49px 0 0 172px;
+  li {
+    padding: 15px 0;
+    a {
+      font: {
+        family: 'Yeseva One', cursive;;
+        size: 30px;
+      }
+      &.activ,&:hover {
+          opacity: 0.3;
+          text-decoration: none;
+      }
+    }
   }
 }

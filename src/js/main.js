@@ -11,7 +11,7 @@
             0:{
                 items: 1
             },
-            992:{
+            1025:{
                 items:3,
                 margin: 20
             }
@@ -64,6 +64,48 @@
             $(".header").removeClass("header-activ");
         }
     });
+
+    /*********************************************************/
+    /* start  menu  */
+    /********************************************************/
+    $(".navList li a").clone().removeClass("navList__link").appendTo(".slidebar");
+    $(".slidebar a").each(function(){
+        $(this).wrap("<li></li>");
+    });
+    $(".slidebar li").wrapAll("<ul class='slidebarList'></ul>");
+    $(".headerInner__col .btn").clone().appendTo(".slidebar");
+    $(".headerInner__col .phone").clone().appendTo(".slidebar");
+    $(".slidebar .btn,.slidebar .phone").wrapAll("<div class='slidebarBottom'></div>");
+    $('<li><a class="activ" href="#" title="">Главная</a></li>').prependTo(".slidebarList");
+
+    var controller = new slidebars();
+    controller.init();
+
+    // Mobile only
+    var windowWidth,
+        mobileOnly = function () {
+            windowWidth = $( window ).width();
+            if ( windowWidth > 1024 ) {
+                controller.close( 'slidebar' );
+            }
+        };
+    mobileOnly();
+    $(window).on( 'resize', mobileOnly );
+
+    $( '.js-toggle-menu' ).on( 'click', function (e) {
+        e.stopPropagation();
+        if ( windowWidth < 1025 ) {
+            controller.toggle('slidebar');
+        }
+    } );
+    $( '.cloze-slidebar' ).on( 'click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        controller.close('slidebar');
+    } );
+    /*********************************************************/
+    /* start  menu  */
+    /********************************************************/
 
 
 

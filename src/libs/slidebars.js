@@ -23,7 +23,7 @@ var slidebars = function () {
 	// Variables, permitted sides and styles
 	init = false,
 	registered = false,
-	sides = [ 'top', 'right', 'bottom', 'left' ],
+	sides = [ 'top', 'right', 'bottom', 'left', 'all' ],
 	styles = [ 'reveal', 'push', 'overlay', 'shift' ],
 
 	/**
