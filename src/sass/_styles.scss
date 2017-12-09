@@ -12,14 +12,25 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
-  display: flex;
 }
 
+.index-page .header {
+  background: none;
+}
 .header {
   padding: 10px 0 0 0;
   height: 129px;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  &.header-activ {
+    background: #fff;
+  }
 }
+
 .headerInner {
   display: flex;
   justify-content: space-between;
@@ -88,10 +99,12 @@
 }
 
 .main {
+  padding: 129px 0 0 0;
   &__preambule {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 0 61px 0;
   }
   &__title {
     padding: 61px 0 0 0;
@@ -154,5 +167,253 @@
     i {
       top: 1px;
     }
+  }
+}
+
+.documents {
+  background: #ffdcd4;
+  padding: 40px 0 61px 0;
+}
+
+.documentsInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.documentsText {
+  width: 40.68%;
+  &__title {
+    margin: 5px 0 0 0;
+    line-height: 1.4;
+    max-width: 320px;
+  }
+  &__subtitle {
+    font: {
+      family: "Intro-Regular";
+    }
+    margin: 0 0 13px 0;
+  }
+  &__entry {
+    padding: 30px 0;
+  }
+  &__content {
+    line-height: 1.6;
+    margin: 0;
+  }
+  &__desc {
+    font: {
+      family: "Intro-Regular";
+    }
+    max-width: 320px;
+    line-height: 1.4;
+  }
+}
+.documentsSliderWrap {
+  width: 48.98%;
+}
+
+.owl-carousel--documents {
+  .owl-nav {
+    position: absolute;
+    left: 0;
+    top: 123px;
+    width: 100%;
+    div {
+      top: 0;
+      text-indent: -9000px;
+      width: 26px;
+      height: 15px;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+  div.owl-prev {
+    left: -45px;
+    background: url("../img/left-arrow.png") no-repeat;
+    &:hover {
+      background: url("../img/left-arrow-hover.png") no-repeat;
+    }
+    &:active {
+      background: url("../img/left-arrow-activ.png") no-repeat;
+    }
+  }
+  div.owl-next {
+    right: -45px;
+    background: url("../img/right-arrow.png") no-repeat;
+    &:hover {
+      background: url("../img/right-arrow-hover.png") no-repeat;
+    }
+    &:active {
+      background: url("../img/right-arrow-activ.png") no-repeat;
+    }
+  }
+}
+
+.portfolioText {
+  .owl-nav {
+    margin: 57px 0 0 0;
+    div {
+      text-indent: -9000px;
+      width: 26px;
+      height: 15px;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+  div.owl-prev {
+    margin-right: 20px;
+    background: url("../img/left-arrow.png") no-repeat;
+    &:hover {
+      background: url("../img/left-arrow-hover.png") no-repeat;
+    }
+    &:active {
+      background: url("../img/left-arrow-activ.png") no-repeat;
+    }
+  }
+  div.owl-next {
+    background: url("../img/right-arrow.png") no-repeat;
+    &:hover {
+      background: url("../img/right-arrow-hover.png") no-repeat;
+    }
+    &:active {
+      background: url("../img/right-arrow-activ.png") no-repeat;
+    }
+  }
+}
+
+.documentsSlider {
+    &__item {
+      figure {
+        figcaption {
+          opacity: 0.57;
+          font-size: 12px;
+          letter-spacing: 0.35px;
+          line-height: 1.45;
+          padding: 10px 0 0 0;
+        }
+      }
+    }
+}
+
+.documentInfoList {
+  padding: 46px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  justify-content: space-between;
+  &__item {
+    width: 33.3%;
+    text-align: center;
+    p {
+      margin: 0 15px;
+      line-height: 1.6;
+    }
+  }
+  &__icon {
+    min-height: 44px;
+  }
+}
+
+.portfolio {
+  padding: 80px 0;
+}
+.portfolioWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolioSlider {
+  width: 40.68%;
+  margin: 0 40px 0 0;
+}
+
+.thumbs {
+  margin: 20px 0 0 0;
+  display: flex;
+  &__list {
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      position: relative;
+      display: block;
+    }
+  }
+  &__list--activ {
+    a:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #b28d8a;
+      opacity: 0.6;
+    }
+  }
+}
+.portfolioText {
+  width: 47.46%;
+  padding: 82px 0 0 0;
+  &__title {
+    margin: 0 0 20px 0;
+  }
+  &__entry {
+    letter-spacing: 0.41px;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+#portfolioSliderCounter {
+  padding: 12px 0 41px 0;
+  font: {
+    family: "Intro-Light";
+    size: 24px;
+  }
+}
+
+.portfolioList {
+  &__item {
+    display: flex;
+    padding: 0 0 15px 0;
+  }
+  &__position {
+    flex-basis: 180px;
+  }
+  &__name {
+    color: #d0746c;
+    font: {
+      family: "Intro-Regular";
+    }
+  }
+}
+
+.footer {
+  letter-spacing: 0.41px;
+  opacity: 0.5;
+  padding: 22px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__col-1 {
+    width: 50%;
+  }
+  &__col-2 {
+    width: 50%;
+    text-align: right;
+  }
+  &__siteName {
+    padding: 0 39px 0 0;
+  }
+  &__design {
+      a {
+        font-family: 'Intro-Bold';
+        text-decoration: underline;
+      }
   }
 }

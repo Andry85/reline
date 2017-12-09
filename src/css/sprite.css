@@ -18,37 +18,37 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 */
 .icon-icon-1 {
   background-image: url(../img/sprite.png);
-  background-position: 0px -11px;
+  background-position: 0px -39px;
   width: 36px;
   height: 32px;
 }
 .icon-icon-2 {
   background-image: url(../img/sprite.png);
-  background-position: 0px -142px;
+  background-position: 0px -202px;
   width: 26px;
   height: 38px;
 }
 .icon-icon-3 {
   background-image: url(../img/sprite.png);
-  background-position: 0px -108px;
+  background-position: 0px -168px;
   width: 45px;
   height: 34px;
 }
 .icon-icon-4 {
   background-image: url(../img/sprite.png);
-  background-position: 0px -180px;
+  background-position: 0px -240px;
   width: 43px;
   height: 38px;
 }
 .icon-icon-5 {
   background-image: url(../img/sprite.png);
-  background-position: 0px -75px;
+  background-position: 0px -135px;
   width: 31px;
   height: 33px;
 }
 .icon-icon-6 {
   background-image: url(../img/sprite.png);
-  background-position: 0px -43px;
+  background-position: 0px -71px;
   width: 40px;
   height: 32px;
 }
@@ -57,4 +57,22 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: 0px 0px;
   width: 8px;
   height: 11px;
+}
+.icon-sertificat {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -278px;
+  width: 27px;
+  height: 38px;
+}
+.icon-star {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -11px;
+  width: 29px;
+  height: 28px;
+}
+.icon-tools {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -103px;
+  width: 31px;
+  height: 32px;
 }
