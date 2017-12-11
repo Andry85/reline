@@ -15,11 +15,16 @@
   @include breakpoint(xmd-down) {
     max-width: 900px;
   }
+  @include breakpoint(md-down) {
+    max-width: 700px;
+  }
+  @include breakpoint(sm-down) {
+    max-width: 320px;
+    padding: 0 20px;
+  }
 }
 
-.index-page .header {
-  background: none;
-}
+
 .header {
   padding: 10px 0 0 0;
   height: 129px;
@@ -32,6 +37,9 @@
   &.header-activ {
     background: #fff;
   }
+  @include breakpoint(sm-down) {
+    height: 77px;
+  }
 }
 
 .headerInner {
@@ -42,6 +50,16 @@
   &__col {
     display: flex;
     align-items: center;
+    &--2 {
+      @include breakpoint(md-down) {
+        padding-top: 9px;
+      }
+      .phone {
+        @include breakpoint(sm-down) {
+          display: none;
+        }
+      }
+    }
   }
 }
 .logo {
@@ -49,6 +67,11 @@
   width: 170px;
   height: 82px;
   position: relative;
+  @include breakpoint(sm-down) {
+    background: url("../img/logo-mobile.png") no-repeat;
+    width: 121px;
+    height: 59px;
+  }
   span {
     position: absolute;
     right: 0;
@@ -56,6 +79,11 @@
     font-size: 10px;
     color: #5c5a5b;
     text-transform: uppercase;
+    @include breakpoint(sm-down) {
+      font-size: 8px;
+      letter-spacing: 0.55px;
+      bottom: 1px;
+    }
   }
 }
 #nav {}
@@ -77,6 +105,9 @@
       @include breakpoint(xmd-down) {
         display: block;
       }
+      @include breakpoint(md-down) {
+        display: none;
+      }
     }
   }
   &__link {
@@ -92,11 +123,13 @@
       padding-left: 5px;
       padding-right: 5px;
       font-size: 10px;
+      letter-spacing: 0;
     }
     @include breakpoint(xmd-down) {
       padding-left: 10px;
       padding-right: 10px;
       font-size: 11px;
+      letter-spacing: 1.02px;
     }
   }
 }
@@ -133,6 +166,9 @@
     flex-direction: column;
     width: 100%;
     padding: 0 0 61px 0;
+    @include breakpoint(sm-down) {
+      padding-bottom: 48px;
+    }
   }
   &__title {
     padding: 61px 0 0 0;
@@ -140,10 +176,20 @@
     @include breakpoint(xmd-down) {
       max-width: 370px;
     }
+    @include breakpoint(md-down) {
+     padding-top: 68px;
+    }
+    @include breakpoint(sm-down) {
+      max-width: 100%;
+      padding-top: 54px;
+    }
     h1 {
       margin: 0;
       @include breakpoint(xmd-down) {
         font-size: 40px;
+      }
+      @include breakpoint(sm-down) {
+        font-size: 30px;
       }
     }
   }
@@ -153,13 +199,19 @@
     @include breakpoint(xmd-down) {
       padding-top: 160px;
     }
+    @include breakpoint(md-down) {
+      padding-top: 81px;
+      max-width: none;
+    }
+  }
+  @include breakpoint(sm-down) {
+    padding-top: 77px;
   }
 }
 
 .categoriesList {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: space-between;
   &__item {
     margin: 0 0 18px 0;
@@ -168,6 +220,9 @@
     border: 1px solid #f5f5f5;
     background: #fff;
     min-height: 145px;
+    @include breakpoint(sm-down) {
+      flex-basis: 100%;
+    }
   }
   &__link {
     display: flex;
@@ -210,6 +265,9 @@
 .documents {
   background: #ffdcd4;
   padding: 40px 0 61px 0;
+  @include breakpoint(sm-down) {
+    padding-bottom: 19px;
+  }
 }
 
 .documentsInner {
@@ -220,11 +278,23 @@
     max-width: 780px;
     margin: 0 auto;
   }
+  @include breakpoint(md-down) {
+    max-width: 670px;
+  }
+  @include breakpoint(sm-down) {
+    max-width: 100%;
+  }
 }
 .documentsText {
   width: 40.68%;
   @include breakpoint(xmd-down) {
     width: 62.82%;
+  }
+  @include breakpoint(md-down) {
+    width: 54.72%;
+  }
+  @include breakpoint(sm-down) {
+    width: 100%;
   }
   &__title {
     margin: 5px 0 0 0;
@@ -234,15 +304,35 @@
       font-size: 40px;
       margin-top: 18px;
     }
+    @include breakpoint(md-down) {
+      max-width: 250px;
+    }
+    @include breakpoint(sm-down) {
+      max-width: 100%;
+      font-size: 30px;
+      margin-top: 28px;
+    }
   }
   &__subtitle {
     font: {
       family: "Intro-Regular";
     }
     margin: 0 0 13px 0;
+    @include breakpoint(md-down) {
+      margin-top: 10px;
+    }
+    @include breakpoint(sm-down) {
+      margin-bottom: 9px;
+    }
   }
   &__entry {
     padding: 30px 0;
+    @include breakpoint(md-down) {
+      padding-bottom: 0;
+    }
+    @include breakpoint(sm-down) {
+      padding-top: 4px;
+    }
   }
   &__content {
     line-height: 1.6;
@@ -254,12 +344,18 @@
     }
     max-width: 320px;
     line-height: 1.4;
+    @include breakpoint(sm-down) {
+      margin: 5px 0 15px 0;
+    }
   }
 }
 .documentsSliderWrap {
   width: 48.98%;
   @include breakpoint(xmd-down) {
     width: 270px;
+  }
+  @include breakpoint(sm-down) {
+    width: 280px;
   }
 }
 
@@ -303,6 +399,12 @@
 .portfolioText {
   .owl-nav {
     margin: 57px 0 0 0;
+    @include breakpoint(md-down) {
+      margin-top: 40px;
+    }
+    @include breakpoint(sm-down) {
+      margin-top: 24px;
+    }
     div {
       text-indent: -9000px;
       width: 26px;
@@ -314,21 +416,15 @@
   }
   div.owl-prev {
     margin-right: 20px;
-    background: url("../img/left-arrow.png") no-repeat;
+    background: url("../img/left-arrow-activ.png") no-repeat;
     &:hover {
       background: url("../img/left-arrow-hover.png") no-repeat;
     }
-    &:active {
-      background: url("../img/left-arrow-activ.png") no-repeat;
-    }
   }
   div.owl-next {
-    background: url("../img/right-arrow.png") no-repeat;
+    background: url("../img/right-arrow-activ.png") no-repeat;
     &:hover {
       background: url("../img/right-arrow-hover.png") no-repeat;
-    }
-    &:active {
-      background: url("../img/right-arrow-activ.png") no-repeat;
     }
   }
 }
@@ -346,6 +442,9 @@
         }
       }
     }
+    @include breakpoint(md-down) {
+      margin-top: 20px;
+    }
 }
 
 .documentInfoList {
@@ -357,9 +456,16 @@
   @include breakpoint(xmd-down) {
    margin: 0 auto;
   }
+  @include breakpoint(md-down) {
+    margin: 0;
+  }
   &__item {
     width: 33.3%;
     text-align: center;
+    @include breakpoint(sm-down) {
+      margin: 5px 0 15px 0;
+      width: 100%;
+    }
     p {
       margin: 0 15px;
       line-height: 1.6;
@@ -372,10 +478,16 @@
 
 .portfolio {
   padding: 80px 0;
+  @include breakpoint(md-down) {
+    padding: 49px 0;
+  }
 }
 .portfolioWrap {
   display: flex;
   flex-wrap: wrap;
+  @include breakpoint(md-down) {
+    justify-content: space-between;
+  }
 }
 
 .portfolioSlider {
@@ -383,6 +495,13 @@
   margin: 0 40px 0 0;
   @include breakpoint(xmd-down) {
     width: 43.3%;
+  }
+  @include breakpoint(md-down) {
+    width: 41.18%;
+    margin: 0;
+  }
+  @include breakpoint(sm-down) {
+    width: 100%;
   }
 }
 
@@ -419,13 +538,29 @@
     padding-top: 0;
     width: 51%;
   }
+  @include breakpoint(md-down) {
+    width: 52.79%;
+  }
+  @include breakpoint(sm-down) {
+    width: 100%;
+  }
   &__title {
     margin: 0 0 20px 0;
+    @include breakpoint(md-down) {
+      font-size: 40px;
+      margin-top: 5px;
+    }
+    @include breakpoint(sm-down) {
+      font-size: 30px;
+    }
   }
   &__entry {
     letter-spacing: 0.41px;
     margin: 0;
     line-height: 1.5;
+    @include breakpoint(sm-down) {
+      padding-bottom: 41px;
+    }
   }
 }
 
@@ -434,6 +569,9 @@
   font: {
     family: "Intro-Light";
     size: 24px;
+  }
+  @include breakpoint(sm-down) {
+    padding-bottom: 29px;
   }
 }
 
@@ -444,6 +582,9 @@
   }
   &__position {
     flex-basis: 180px;
+    @include breakpoint(sm-down) {
+      flex-basis: 98px;
+    }
   }
   &__name {
     color: #d0746c;
@@ -464,10 +605,19 @@
   }
   &__col-1 {
     width: 50%;
+    @include breakpoint(sm-down) {
+      width: 100%;
+      padding-bottom: 13px;
+    }
   }
   &__col-2 {
     width: 50%;
     text-align: right;
+    @include breakpoint(sm-down) {
+      width: 100%;
+      text-align: left;
+      padding-bottom: 3px;
+    }
   }
   &__siteName {
     padding: 0 39px 0 0;
@@ -507,6 +657,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include breakpoint(md-down) {
+      padding-left: 144px;
+      padding-right: 62px;
+
+    }
+    @include breakpoint(sm-down) {
+      max-width: 100%;
+      padding: 55px 20px 0 20px;
+      display: block;
+      .phone {
+        text-align: left;
+        padding: 20px 0 29px 0;
+      }
+    }
   }
 }
 
@@ -516,16 +680,38 @@
   margin: 0 26px 0 72px;
   position: relative;
   top: -10px;
+  @include breakpoint(md-down) {
+    margin-left: 46px;
+  }
+  @include breakpoint(sm-down) {
+    margin-left: 20px;
+    margin-right: 16px;
+  }
 }
 
 .slidebarList {
   padding: 49px 0 0 172px;
+  @include breakpoint(md-down) {
+    padding-left: 144px;
+  }
+  @include breakpoint(sm-down) {
+    padding-left: 21px;
+    padding-top: 28px;
+  }
   li {
     padding: 15px 0;
+    @include breakpoint(sm-down) {
+      padding: 9px 0;
+    }
     a {
       font: {
-        family: 'Yeseva One', cursive;;
+        family: 'Yeseva One', cursive;
         size: 30px;
+      }
+      @include breakpoint(sm-down) {
+        font: {
+          size: 20px;
+        }
       }
       &.activ,&:hover {
           opacity: 0.3;
@@ -534,3 +720,4 @@
     }
   }
 }
+

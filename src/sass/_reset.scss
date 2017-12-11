@@ -59,6 +59,15 @@ body {
 		@include breakpoint(xmd-down) {
 			background-image: url("../img/body-bg-1024.jpg");
 		}
+		@include breakpoint(md-down) {
+			background: none;
+		}
+		header {
+			background: none;
+			@include breakpoint(md-down) {
+				background: #fff;
+			}
+		}
 	}
 
 	font: {
