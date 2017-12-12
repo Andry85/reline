@@ -44,10 +44,6 @@
             $('.owl-carousel--portfolio .owl-nav').prependTo('.owl-item.active .controls');
             $('#portfolioSliderCounter').appendTo('.owl-item.active .controls');
         }
-
-
-
-
     /*********************************************************/
     /* end portfolio slider  */
     /********************************************************/
@@ -58,7 +54,7 @@
         $(".thumbs li a").click(function(e){
             e.preventDefault();
             var $href = $(this).attr('href');
-            $(this).parents(".portfolioSlider__item").children('figure').children('img').attr('src', $href);
+            $(this).parents(".portfolioSlider__item").children('figure').find('img').attr('src', $href);
             $(this).parent().addClass("thumbs__list--activ").siblings("li").removeClass("thumbs__list--activ");
         });
     /*********************************************************/
@@ -150,6 +146,24 @@
     /*********************************************************/
     /* end change text on button  */
     /********************************************************/
+
+    /*********************************************************/
+    /* start document slider   */
+    /********************************************************/
+    $('.servicGoalSlider .owl-carousel').owlCarousel({
+        autoHeight:true,
+        nav: true,
+        items: 1
+    });
+    /*********************************************************/
+    /* end document slider  */
+    /********************************************************/
+
+
+
+
+
+
 
 
 })(jQuery);

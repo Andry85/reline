@@ -216,10 +216,12 @@
   &__item {
     margin: 0 0 18px 0;
     flex-basis: 48.85%;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
     border: 1px solid #f5f5f5;
     background: #fff;
     min-height: 145px;
+    &:hover {
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+    }
     @include breakpoint(sm-down) {
       flex-basis: 100%;
     }
@@ -654,7 +656,7 @@
 }
 .slidebar {
   background: #fff;
-  z-index: 99999;
+  z-index: 99991;
   padding: 9px 0 0 0;
   .slidebarBottom {
     padding: 65px 72px 62px 172px;
@@ -725,3 +727,260 @@
   }
 }
 
+.servicesPopap {
+  max-width: 972px;
+  padding: 18px 53px 7px 16px;
+  @include breakpoint(xmd-down) {
+    max-width: none;
+  }
+  @include breakpoint(md-down) {
+    max-width: 633px;
+    padding-right: 16px;
+  }
+  @include breakpoint(sm-down) {
+    max-width: none;
+    padding: 40px 0 7px 0;
+  }
+  &__title {
+    font-size: 36px;
+    margin: 0;
+    @include breakpoint(sm-down) {
+      font-size: 30px;
+    }
+  }
+  &__text {
+    line-height: 1.5;
+    padding: 12px 20px 0 0;
+    @include breakpoint(sm-down) {
+      padding-right: 0;
+    }
+  }
+}
+.servicesPopapList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 21px 0 0 0;
+  &__item {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f5f5f5;
+    background: #fff;
+    flex-basis: 281px;
+    margin: 0 19px 18px 0;
+    padding: 10px 29px 12px 29px;
+    min-height: 143px;
+    @include breakpoint(sm-down) {
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+  &__link {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    font-family: "Intro-Bold";
+    font-size: 18px;
+    letter-spacing: 0.52px;
+  }
+  &__price {
+    margin: 0;
+    color: #d0746c;
+    font: {
+      family: "Intro-Regular";
+      size: 14px;
+    }
+    letter-spacing: 0.03px;
+    i {
+      top: 1px;
+    }
+  }
+  &__time {
+    color: #b6b9bb;
+    font-family: "Intro-Regular";
+    font-size: 12px;
+    letter-spacing: 0.03px;
+    padding: 0 0 0 14px;
+  }
+}
+
+.servicGoalPopap {
+  max-width: 972px;
+  padding: 18px 0 26px 16px;
+  @include breakpoint(xmd-down) {
+    max-width: 944px;
+    padding: 0;
+    margin-top: -46px;
+  }
+  @include breakpoint(md-down) {
+    max-width: 532px;
+    padding: 0 16px;
+    margin: 20px 0 16px 0;
+  }
+  @include breakpoint(sm-down) {
+    max-width: 272px;
+    padding: 0;
+  }
+  &__title {
+    font-size: 36px;
+    margin: 0 0 33px 0;
+    @include breakpoint(sm-down) {
+      font-size: 30px;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__col-1 {
+    width: 43.66%;
+    @include breakpoint(md-down) {
+      width: 100%;
+    }
+  }
+  &__col-2 {
+    width: 50%;
+    @include breakpoint(md-down) {
+      width: 100%;
+    }
+  }
+  &__preambule {
+    padding: 9px 0 0 0;
+    p {
+      line-height: 1.5;
+    }
+  }
+  &__postambule {
+    p {
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}
+
+.servicGoalSlider {
+  @include breakpoint(sm-down) {
+    padding: 0 45px;
+  }
+}
+
+.owl-carousel--servic {
+  .owl-nav {
+    div {
+      text-indent: -9000px;
+      width: 26px;
+      height: 15px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  div.owl-prev {
+    left: 10px;
+    background: url("../img/left-arrow-hover.png") no-repeat;
+    @include breakpoint(sm-down) {
+      left: -45px;
+    }
+  }
+  div.owl-next {
+    right: 10px;
+    background: url("../img/right-arrow-hover.png") no-repeat;
+    @include breakpoint(sm-down) {
+      right: -45px;
+    }
+  }
+}
+
+.workersTable {
+  border-top: 1px solid #e5e5e5;
+  margin: 30px 0 0 0;
+  padding: 23px 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.workersList {
+  width: 40%;
+  @include breakpoint(sm-down) {
+    width: 100%;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 13px 0;
+  }
+  &__name {
+    color: #d0746c;
+    font-family: "Intro-Regular";
+    letter-spacing: 0.03px;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 2px;
+    }
+  }
+  &__line {
+    flex-grow: 1;
+    border-bottom: 1px dotted #7b7b7b;
+    position: relative;
+    top: -5px;
+  }
+  &__price {
+    letter-spacing: 0.41px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 2px;
+    }
+  }
+}
+
+.bigBtn {
+  height: 90px;
+  box-shadow: 0 9px 17px rgba(208, 116, 108, 0.44);
+  border-radius: 3px;
+  background-image: linear-gradient(126deg, #eaaca5 0%, #d0746c 100%);
+  display: flex;
+  justify-content: space-between;
+  max-width: 440px;
+  color: #fff;
+  padding: 0 38px 0 31px;
+  &:hover {
+    text-decoration: none;
+  }
+  &__col-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      font-family: "Intro-Bold";
+      font-size: 24px;
+      letter-spacing: 0.7px;
+      i {
+        position: relative;
+        top: -2px;
+      }
+      span {
+        @include breakpoint(sm-down) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__price {
+    font-family: "Intro-Bold";
+    letter-spacing: 0.03px;
+  }
+  &__time {
+    font-family: "Intro-Regular";
+    letter-spacing: 0.03px;
+    opacity: 0.5;
+  }
+}
