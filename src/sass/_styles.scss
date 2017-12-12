@@ -396,15 +396,8 @@
   }
 }
 
-.portfolioText {
+.owl-carousel--portfolio {
   .owl-nav {
-    margin: 57px 0 0 0;
-    @include breakpoint(md-down) {
-      margin-top: 40px;
-    }
-    @include breakpoint(sm-down) {
-      margin-top: 24px;
-    }
     div {
       text-indent: -9000px;
       width: 26px;
@@ -428,6 +421,7 @@
     }
   }
 }
+
 
 .documentsSlider {
     padding: 0 45px;
@@ -483,10 +477,12 @@
   }
 }
 .portfolioWrap {
-  display: flex;
-  flex-wrap: wrap;
-  @include breakpoint(md-down) {
-    justify-content: space-between;
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(md-down) {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -502,7 +498,9 @@
   }
   @include breakpoint(sm-down) {
     width: 100%;
+    margin-bottom: 30px;
   }
+
 }
 
 .thumbs {
@@ -558,24 +556,30 @@
     letter-spacing: 0.41px;
     margin: 0;
     line-height: 1.5;
-    @include breakpoint(sm-down) {
+    padding-bottom: 57px;
+    @include breakpoint(md-down) {
       padding-bottom: 41px;
+    }
+    @include breakpoint(sm-down) {
+      padding: 40px 0 0 0;
     }
   }
 }
 
 #portfolioSliderCounter {
-  padding: 12px 0 41px 0;
+  padding: 12px 0 0 0;
   font: {
     family: "Intro-Light";
     size: 24px;
   }
-  @include breakpoint(sm-down) {
-    padding-bottom: 29px;
-  }
+}
+
+.controls {
+  height: 56px;
 }
 
 .portfolioList {
+  padding: 41px 0 0 0;
   &__item {
     display: flex;
     padding: 0 0 15px 0;

@@ -23,19 +23,31 @@
     /*********************************************************/
     /* start portfolio slider   */
     /********************************************************/
-        $('.portfolioSlider .owl-carousel').owlCarousel({
+        $('.portfolioWrap .owl-carousel').owlCarousel({
             autoHeight:true,
             nav: true,
             items: 1,
             onInitialized: counter, //When the plugin has initialized.
-            onTranslated: counter //When the translation of the stage has finished.
+            onTranslated: counter, //When the translation of the stage has finished.
         });
         function counter(event) {
+            moveelements();
             var element   = event.target;         // DOM element, in this example .owl-carousel
             var items     = event.item.count;     // Number of items
             var item      = event.item.index + 1;     // Position of the current item
-            $('#portfolioSliderCounter').html(+item+"/"+items)
+            $('#portfolioSliderCounter').html(+item+"/"+items);
+
+
         }
+        
+        function moveelements() {
+            $('.owl-carousel--portfolio .owl-nav').prependTo('.owl-item.active .controls');
+            $('#portfolioSliderCounter').appendTo('.owl-item.active .controls');
+        }
+
+
+
+
     /*********************************************************/
     /* end portfolio slider  */
     /********************************************************/
@@ -79,21 +91,6 @@
     /* start  menu  */
     /********************************************************/
 
-        function creatingContentInMenu() {
-            $(".navList li a").clone().removeClass("navList__link").appendTo(".slidebar");
-            $(".slidebar a").each(function(){
-                $(this).wrap("<li></li>");
-            });
-            $(".slidebar li").wrapAll("<ul class='slidebarList'></ul>");
-            $(".headerInner__col .btn").clone().text('Записаться онлайн').appendTo(".slidebar");
-            $(".headerInner__col .phone").clone().appendTo(".slidebar");
-            $(".slidebar .btn,.slidebar .phone").wrapAll("<div class='slidebarBottom'></div>");
-            $('<li><a class="activ" href="#" title="">Главная</a></li>').prependTo(".slidebarList");
-        }
-        function deletingContentInMenu() {
-            $(".slidebar").children().not($( ".cloze-slidebar,.icon-logo-medium" )).remove();
-        }
-
         var controller = new slidebars();
         controller.init();
 
@@ -102,7 +99,6 @@
             mobileOnly = function () {
                 windowWidth = $(window).width();
                 if (windowWidth > 1024) {
-                    deletingContentInMenu();
                     controller.close('slidebar');
                 }
             };
@@ -111,7 +107,6 @@
 
         $('.js-open-menu').on('click', function (e) {
             e.stopPropagation();
-            creatingContentInMenu();
             if ( windowWidth < 1025 ) {
                 controller.open('slidebar');
             }
@@ -119,7 +114,6 @@
         $('.cloze-slidebar').on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            deletingContentInMenu();
             controller.close('slidebar');
         } );
     /*********************************************************/
@@ -130,21 +124,29 @@
     /*********************************************************/
     /* start change text on button  and portfolio title  */
     /********************************************************/
-    changeText();
-    $(window).resize(changeText);
-    function changeText(){
-        if ($(window).width() <= 767) {
-            $(".headerInner__col--2 .btn").text('Запись');
-            $(".portfolioText__title").prependTo(".portfolioWrap");
-           $(".portfolioText__entry").insertBefore(".portfolioList");
+        changeText();
+        $(window).resize(changeText);
+        function changeText(){
+            var parentelement =  $('.owl-carousel--portfolio .portfolioWrap__item');
+            if ($(window).width() <= 767) {
+                $(".headerInner__col--2 .btn").text('Запись');
+                parentelement.find('.portfolioText__title').each(function(){
+                    $(this).parents('.portfolioWrap__item').prepend($(this));
+                });
+                parentelement.find('.portfolioText__entry').each(function(){
+                    $(this).parents('.portfolioWrap__item').find('.controls').insertBefore($(this));
+                });
+            }
+            else {
+               $(".headerInner__col--2 .btn").text('Записаться онлайн');
+                parentelement.find('.portfolioText__title').each(function(){
+                     $(this).parents('.portfolioWrap__item').find('.portfolioText').prepend($(this));
+                 });
+                parentelement.find('.portfolioText__entry').each(function(){
+                     $(this).parents('.portfolioWrap__item').find('.controls').insertAfter($(this));
+                 });
+            }
         }
-        else {
-           $(".headerInner__col--2 .btn").text('Записаться онлайн');
-           $(".portfolioText__entry").insertBefore(".portfolioText .owl-nav");
-            $(".portfolioText__title").insertBefore(".portfolioText__entry");
-        }
-    }
-
     /*********************************************************/
     /* end change text on button  */
     /********************************************************/
